@@ -1,5 +1,6 @@
 const express = require("express");
 const adminController = require("../controllers/adminController");
+const departmentController = require("../controllers/departmentController");
 const jobController = require("../controllers/jobController");
 const eventController = require("../controllers/eventController");
 const { authenticate, authorize } = require("../middleware/authMiddleware");
@@ -21,6 +22,13 @@ router.get(
   "/dashboard/mentorship-analytics",
   adminController.getMentorshipAnalytics,
 ); // NEW
+
+// ========== DEPARTMENTS ==========
+router.get("/departments/all", departmentController.listAll);
+router.get("/departments/stats", departmentController.stats);
+router.post("/departments", departmentController.create);
+router.put("/departments/:id", departmentController.update);
+router.delete("/departments/:id", departmentController.remove);
 
 // ========== JOB MODERATION ==========
 router.put("/approve-job/:id", jobController.approveJob);

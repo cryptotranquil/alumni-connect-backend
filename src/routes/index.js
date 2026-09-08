@@ -11,6 +11,7 @@ router.use("/events", require("./eventRoutes"));
 router.use("/admin", require("./adminRoutes"));
 router.use("/connections", require("./connectionRoutes"));
 router.use("/directory", require("./directoryRoutes"));
+router.use("/departments", require("./departmentRoutes"));
 router.use("/notifications", require("./notificationRoutes"));
 router.use("/businesses", require("./businessRoutes"));
 
