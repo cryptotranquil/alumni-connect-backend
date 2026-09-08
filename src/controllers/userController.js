@@ -16,7 +16,7 @@ exports.getPublicPeer = async (req, res) => {
     return res.status(404).json({ success: false, message: "User not found" });
   res.json({
     _id: peer.id,
-    name: peer.name,
+    name: `${peer.firstname || ""} ${peer.lastname || ""}`.trim(),
     profilePhoto: peer.profilePhoto || "",
     role: peer.role,
   });
